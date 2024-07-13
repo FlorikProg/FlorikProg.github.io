@@ -1,39 +1,110 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Roman</title>
-  <link rel="icon" href="icon.png">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+DE+Grund:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <title>New Messages</title>
 </head>
 <body>
-  <div class="container">
-    <div class="profile-photo">
-      <img src="icon_photo.jpg" alt="Фото профиля">
+  <header>
+    <nav class="navbar">
+      <div class="navbar-brand"><h4>FChat</h4></div>
+      <div><a style="border-bottom: 3px white solid;" href="">Home</a></div>
+      <div><a href="">Send</a></div>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <div class="message-boxes">
+        <!-- New messages will be added here -->
+      </div>
     </div>
-    <div class="social-buttons">
-      <a href="https://github.com/FlorikProg" class="social-button">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://www.youtube.com/@florikprog404" class="social-button">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="https://t.me/florik_prog_it" class="social-button">
-        <i class="fab fa-telegram-plane"></i>
-      </a>
-    </div>
+  </main>
+  <script>
+async function fetchMessages() {
 
-    <div class="my_bio">
-      <h1 id="what">Обо мне</h1>
-      <h2 id="bio">Меня зовут Рома, мне 12 лет, и я занимаюсь программированием уже 2 года. Также интересуюсь темой финансов и всем, что с ними связанно. Еще у меня есть свой телеграм-канал, который я активно развиваю.</h2>
-    </div>
-    <div>
-    </div>
-  </div>
+    const accessToken = getCookie('jwtToken');
+
+    console.log(accessToken)
+    const response = await fetch('https://render-fastapi-2cav.onrender.com/check_message?token=' + getCookie('jwtToken'), {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ token: getCookie('jwtToken') })
+    });
+
+    const data = await response.json();
+    data.messages.forEach(message => addMessage(message.title, message.message));
+
+}
+
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+function createMessageBox(title, content) {
+  const messageBox = document.createElement("div");
+  messageBox.classList.add("message-box");
+  messageBox.setAttribute("onclick", "toggleMessage(this)");
+
+  const messageHeader = document.createElement("div");
+  messageHeader.classList.add("message-header");
+
+  const messageTitle = document.createElement("h3");
+  messageTitle.textContent = title;
+  messageTitle.style.fontWeight = "bold";
+
+  const expandIcon = document.createElement("span");
+  expandIcon.classList.add("expand-icon");
+
+  const expandIconElement = document.createElement("i");
+  expandIconElement.classList.add("material-icons");
+  expandIconElement.textContent = "expand_more";
+
+  messageHeader.appendChild(messageTitle);
+  messageHeader.appendChild(expandIcon);
+  expandIcon.appendChild(expandIconElement);
+
+  const messageContent = document.createElement("div");
+  messageContent.classList.add("message-content");
+  messageContent.classList.add("hidden");
+
+  const messageContentText = document.createElement("p");
+  messageContentText.textContent = content;
+
+  messageContent.appendChild(messageContentText);
+  messageBox.appendChild(messageHeader);
+  messageBox.appendChild(messageContent);
+
+  return messageBox;
+}
+
+function addMessage(title, content) {
+  const messageBox = createMessageBox(title, content);
+  const messageBoxes = document.querySelector(".message-boxes");
+  messageBoxes.insertBefore(messageBox, messageBoxes.firstChild);
+}
+
+function toggleMessage(messageBox) {
+  const messageContent = messageBox.querySelector(".message-content");
+  messageContent.classList.toggle("hidden");
+  const expandIcon = messageBox.querySelector(".expand-icon i");
+  expandIcon.textContent = messageContent.classList.contains("hidden") ? 'expand_more' : 'expand_less';
+}
+
+window.addEventListener('DOMContentLoaded', fetchMessages);
+
+  </script>
+  <script src="main.js"></script>
 </body>
 </html>
+
+
