@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="profile.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <title>Registration</title>
+</head>
+<body>
+    <div class="profile-container">
+        <form id="registrationForm" method="post">
+            <div class="profile-group">
+                <h1>Registration</h1>
+                <input id="username" type="text" placeholder="Username" required>
+                <input id="password" type="password" placeholder="Password" required>
+                <button type="submit">Register</button>
+                <p>Есть аккаунт? <a href="http://127.0.0.1:5500/src/frontend/templates/profile_login.html">Логин</a></p>
+            </div>
+        </form>
+    </div>
+    <script>
+        const form = document.getElementById('registrationForm');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const code = 'string'
+
+            try {
+                const response = await fetch('http://127.0.0.1:8000/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, password, code })
+                });
+
+                if (response.ok) {
+                    alert('Registration successful!');
+                    window.location.replace('www.google.com')
+                } else {
+                    const errorData = await response.json();
+                    alert(`Error: ${errorData.detail}`);
+                }
+            } catch (error) {
+                console.error(error);
+                alert('An error occurred during registration.');
+            }
+        });
+    </script>
+</body>
+</html>

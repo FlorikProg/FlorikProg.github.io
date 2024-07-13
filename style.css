@@ -1,0 +1,15 @@
+body {
+    background-color: #343a40; /* Темный фон */
+    color: #fff; /* Светлый текст */
+}
+
+.navbar-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.card-container {
+    display: flex;
+    justify-content: center;
+}

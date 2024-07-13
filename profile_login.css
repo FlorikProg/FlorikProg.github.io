@@ -1,0 +1,78 @@
+body {
+    background-color: #1c1c1c; /* Темный фон */
+    color: #f2f2f2; /* Светлый текст */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    padding-top: 70px;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.profile-group {
+    margin-bottom: 35px;
+    flex-direction: column;
+    padding: 50px 50px;
+    border-radius: 10px;
+}
+
+input, button, h1 {
+    display: block;
+    margin-bottom: 40px;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+button {
+    margin-left: 10px;
+    width: 195px;
+    background-color: #333; /* Темный фон */
+    height: 35px;
+    border: 2px solid #333; /* Темный фон */
+    border-radius: 10px;
+    color: #f2f2f2; /* Светлый текст */
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+}
+
+button:hover {
+    transition: 0.5s;
+    scale: 0.9;
+    background-color: #444; /* Темный фон */
+    border-color: #444; /* Темный фон */
+}
+
+h1 {
+    margin-right: 20px;
+    color: #f2f2f2; /* Светлый текст */
+}
+
+input {
+    border: none;
+    outline: none;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px solid #333; /* Темный фон */
+}
+
+p {
+    margin-left: 25px;
+    color: #666; /* Светлый текст */
+}
+
+.description {
+    max-width: 300px;
+    text-align: center;
+    color: #f2f2f2; /* Светлый текст */
+}
