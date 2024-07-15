@@ -41,7 +41,7 @@
 
                 if (response.ok) {
                     alert('Registration successful!');
-                    window.location.replace('www.google.com')
+                    window.location.href = 'https://florikprog.github.io/profile_login.html'
                 } else {
                     const errorData = await response.json();
                     alert(`Error: ${errorData.detail}`);
