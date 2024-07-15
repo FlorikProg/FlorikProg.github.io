@@ -32,9 +32,9 @@
             <center>
                 <form method="post" id="loginForm">
                     <button>Отправить✉️</button>
-                    <input type="text" name="code" id="code" placeholder="Code">
-                    <input type="text" name="title" id="title" placeholder="Title">
-                    <input type="text" name="message" id="text" placeholder="Message">
+                    <input type="text" name="code" id="code" placeholder="Code" onclick="closeKeyboard()">
+                    <input type="text" name="title" id="title" placeholder="Title" onclick="closeKeyboard()">
+                    <input type="text" name="message" id="text" placeholder="Message" onclick="closeKeyboard()">
                 </form>
             </center>
         </div>
@@ -66,6 +66,12 @@
                 body: JSON.stringify(data)
             })
         })
+
+          
+        function closeKeyboard() {
+          document.activeElement.blur();
+        }
+  
     </script>
 </body>
 </html>
