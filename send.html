@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Send</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,9 +31,9 @@
             <center>
                 <form method="post" id="loginForm">
                     <button>Отправить✉️</button>
-                    <input type="text" name="code" id="code" placeholder="Code" onclick="closeKeyboard()">
-                    <input type="text" name="title" id="title" placeholder="Title" onclick="closeKeyboard()">
-                    <input type="text" name="message" id="text" placeholder="Message" onclick="closeKeyboard()">
+                    <input type="text" name="code" id="code" placeholder="Code">
+                    <input type="text" name="title" id="title" placeholder="Title">
+                    <input type="text" name="message" id="text" placeholder="Message">
                 </form>
             </center>
         </div>
@@ -67,10 +66,7 @@
             })
         })
 
-          
-        function closeKeyboard() {
-          document.activeElement.blur();
-        }
+        
   
     </script>
 </body>
