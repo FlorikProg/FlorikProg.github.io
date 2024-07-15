@@ -44,7 +44,7 @@
         };
 
         // Отправляем данные на API с помощью fetch
-        fetch('https://render-fastapi-2cav.onrender.com/login', {
+        fetch('https://render-fast-api-xi.vercel.app/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -54,7 +54,6 @@
         .then(response => response.json())
         .then(data => {
             console.log('Успешно:', data);
-            window.location.replace('www.google.com')
             function setCookie(name, value, days) {
                 let expires = "";
                 if (days) {
