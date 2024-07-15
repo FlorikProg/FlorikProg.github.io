@@ -24,7 +24,7 @@
                     <a href="">Home</a>
                 </div>
                 <div>
-                    <a style="border-bottom: 3px white solid;" href="">Send</a>
+                    <a href="">Send</a>
                 </div>
             </nav>
         </header>
@@ -58,7 +58,7 @@
 
             // Отправляем данные на API с помощью fetch
             
-            fetch('https://render-fastapi-2cav.onrender.com/add_message?title='+title+'&'+'text='+text+'&code='+code, { 
+            fetch('https://render-fast-api-xi.vercel.app/add_message?title='+title+'&'+'text='+text+'&code='+code, { 
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
