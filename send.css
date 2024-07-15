@@ -60,7 +60,6 @@ input {
   font-weight: 700;
   font-size: 20px;
   margin-top: 50px;
-  border: none;
   border: 2px #f2f2f2 solid; /* Светлая граница */
   background-color: #1c1c1c00; /* Прозрачный фон */
   outline: none;
