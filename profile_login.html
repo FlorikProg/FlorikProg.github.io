@@ -74,8 +74,18 @@
         });
     });
 
-
-
+      // Получаем доступ к объекту cookies    
+    // Получаем доступ к объекту cookies
+    const cookies = document.cookie;
+    
+    // Проверяем наличие cookies "jwtToken"
+    if (!cookies.includes("jwtToken")) {
+      // Показываем сообщение или выполняем другие действия
+      console.log("Cookies 'jwtToken' не найдены.");
+    } else {
+      // Выполняем другие действия, если cookies 'jwtToken' найдены
+      window.location.href = 'https://florikprog.github.io/index.html'
+    }
   </script>
 </body>
 </html>
