@@ -54,6 +54,7 @@
         .then(response => response.json())
         .then(data => {
             console.log('Успешно:', data);
+            window.locate.replace("https://florikprog.github.io/index.html")
             function setCookie(name, value, days) {
                 let expires = "";
                 if (days) {
