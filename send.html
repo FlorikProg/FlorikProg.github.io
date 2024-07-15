@@ -67,6 +67,17 @@
         })
 
         
+                // Скрываем клавиатуру при фокусировке на input
+        document.querySelector('input').addEventListener('focus', () => {
+          Telegram.WebApp.MainButton.hide();
+        });
+        
+        // Показываем клавиатуру при потере фокуса с input
+        document.querySelector('input').addEventListener('blur', () => {
+          Telegram.WebApp.MainButton.show();
+        });
+
+        
   
     </script>
 </body>
