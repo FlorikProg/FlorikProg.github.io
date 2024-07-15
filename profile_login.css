@@ -26,6 +26,7 @@ input, button, h1 {
     font-family: "Nunito", sans-serif;
     font-optical-sizing: auto;
     font-weight: bold;
+    font-size: 16px;
     font-style: normal;
     border-radius: 5px;
     margin-left: 10px;
