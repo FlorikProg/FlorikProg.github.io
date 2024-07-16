@@ -2,7 +2,7 @@
 body {
   font-family: "Nunito", sans-serif;
   font-weight: 400;
-  background-color: var(--tg-theme-bg-color);; /* Темный фон */
+  background-color: var(--tg-theme-bg-color); /* Темный фон */
   color: var(--tg-theme-text-color); /* Светлый текст */
   margin: 0;
   padding: 0;
