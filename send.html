@@ -67,18 +67,25 @@
             })
         })
 
-        
-                // Скрываем клавиатуру при фокусировке на input
-        document.querySelector('input').addEventListener('focus', () => {
-          Telegram.WebApp.MainButton.hide();
-        });
-        
-        // Показываем клавиатуру при потере фокуса с input
-        document.querySelector('input').addEventListener('blur', () => {
-          Telegram.WebApp.MainButton.show();
-        });
+        document.addEventListener('click', function(event) { // Если клик был вне поля ввода, убираем фокус с поля ввода 
+            if (!event.target.closest('#code')) { 
+                document.getElementById('code').blur(); 
+            } 
+        }); 
 
         
+        document.addEventListener('click', function(event) { // Если клик был вне поля ввода, убираем фокус с поля ввода 
+            if (!event.target.closest('#text')) { 
+                document.getElementById('text').blur(); 
+            } 
+        }); 
+
+        
+        document.addEventListener('click', function(event) { // Если клик был вне поля ввода, убираем фокус с поля ввода 
+            if (!event.target.closest('#title')) { 
+                document.getElementById('title').blur(); 
+            } 
+        }); 
   
     </script>
 </body>
