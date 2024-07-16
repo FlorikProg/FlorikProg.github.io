@@ -2,8 +2,8 @@
 body {
   font-family: "Nunito", sans-serif;
   font-weight: 400;
-  background-color: var(--tg-theme-bg-color); /* Темный фон */
-  color: var(--tg-theme-text-color); /* Светлый текст */
+  background-color: #000000; /* Темный фон */
+  color: #fff; /* Светлый текст */
   margin: 0;
   padding: 0;
 
