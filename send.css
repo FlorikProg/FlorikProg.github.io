@@ -9,6 +9,7 @@ body {
 
 }
 
+
 .navbar {
   background-color: #1c1c1c; /* Темно-серый цвет навигационной панели */
   color: #f2f2f2; /* Светло-серый цвет текста */
@@ -42,6 +43,8 @@ body {
 .navbar a.active {
   border-bottom: 3px solid #f2f2f2; /* Светло-серая подчеркивающая линия для активной ссылки */
 }
+
+
 
 
 a {
