@@ -8,37 +8,42 @@ body {
 }
 
 .navbar {
-  background-color: #1c1c1c; /* Темно-серый цвет навигационной панели */
-  color: #f2f2f2; /* Светло-серый цвет текста */
-  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5); /* Более мягкая тень */
-  height: 50px;
+  padding: 15px 20px;
+  font-family: "Nunito", sans-serif;
 }
 
-.navbar-brand {
+.navbar-brand a {
   font-weight: 700;
   font-size: 20px;
-  color: #f2f2f2; /* Светло-серый цвет бренда */
+  color: #f2f2f2;
+  text-decoration: none;
 }
 
-.navbar a {
-  color: #f2f2f2; /* Светло-серый цвет ссылок */
-  font-weight: 600;
+.navbar-nav {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-left: 20px;
+}
+
+.nav-item a {
+  color: #f2f2f2;
   text-decoration: none;
+  font-weight: 600;
   font-size: 16px;
-  padding: 10px 15px;
+  padding: 5px 10px;
   transition: color 0.3s ease;
 }
 
-.navbar a:hover {
-  color: #e5e7eb; /* Более светлый серый цвет ссылок при наведении */
-}
-
-.navbar a.active {
-  border-bottom: 3px solid #f2f2f2; /* Светло-серая подчеркивающая линия для активной ссылки */
+.nav-item a:hover {
+  color: #e5e7eb;
 }
 
 
