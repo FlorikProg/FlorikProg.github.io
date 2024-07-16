@@ -56,6 +56,7 @@ button:hover {
 h1 {
     margin-right: 20px;
     color: #f2f2f2; /* Светлый текст */
+    font-size: 25px;
 }
 
 input {
@@ -70,7 +71,7 @@ input {
     padding-left: 20px;
     padding-right: 20px;
     width: 200px;
-    color: #f2f2f2; /* Светлый текст */
+    color: #fff; /* Светлый текст */
 }
 
 p {
