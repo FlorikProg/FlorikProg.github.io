@@ -34,12 +34,11 @@ input, button, h1 {
 
 button {
     margin-left: 10px;
-    width: 195px;
     background-color: #fff; /* Темный фон */
     height: 35px;
     border: 2px solid #333; /* Темный фон */
     border-radius: 10px;
-    color: #000000/* Светлый текст */
+    color: black/* Светлый текст */
     font-family: "Nunito", sans-serif;
     font-optical-sizing: auto;
     font-weight: bold;
