@@ -6,7 +6,7 @@ body {
     justify-content: center;
     margin: 0;
     padding: 0;
-    padding-top: 40px;
+    padding-top: 25px;
     font-family: "Nunito", sans-serif;
     font-optical-sizing: auto;
     font-weight: bold;
@@ -25,7 +25,7 @@ input, button, h1 {
     margin-bottom: 40px;
     font-family: "Nunito", sans-serif;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 25px;
     font-style: normal;
     border-radius: 5px;
     margin-left: 10px;
@@ -34,6 +34,7 @@ input, button, h1 {
 
 button {
     margin-left: 10px;
+    
     background-color: #fff; /* Темный фон */
     height: 35px;
     border: 2px solid #333; /* Темный фон */
@@ -55,15 +56,22 @@ button:hover {
 h1 {
     margin-right: 20px;
     color: #f2f2f2; /* Светлый текст */
+    font-size: 25px;
 }
 
 input {
-    border: none;
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 30px;
+    border: 2px gray solid; /* Светлая граница */
+    background-color: #1c1c1c00; /* Прозрачный фон */
     outline: none;
-    height: 30px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border: 2px solid #333; /* Темный фон */
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 200px;
+    color: #fff; /* Светлый текст */
 }
 
 p {
