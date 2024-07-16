@@ -86,6 +86,20 @@
       // Выполняем другие действия, если cookies 'jwtToken' найдены
       window.location.href = 'https://florikprog.github.io/index.html'
     }
+
+        document.addEventListener('click', function(event) { // Если клик был вне поля ввода, убираем фокус с поля ввода 
+          if (!event.target.closest('#password')) { 
+              document.getElementById('password').blur(); 
+        } 
+    }); 
+
+    
+        document.addEventListener('click', function(event) { // Если клик был вне поля ввода, убираем фокус с поля ввода 
+          if (!event.target.closest('#username')) { 
+              document.getElementById('username').blur(); 
+        } 
+    }); 
+
   </script>
 </body>
 </html>
