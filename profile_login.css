@@ -25,7 +25,7 @@ input, button, h1 {
     margin-bottom: 40px;
     font-family: "Nunito", sans-serif;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 15px;
     font-style: normal;
     border-radius: 5px;
     margin-left: 10px;
@@ -38,10 +38,11 @@ button {
     height: 35px;
     border: 2px solid #333; /* Темный фон */
     border-radius: 10px;
-    color: black/* Светлый текст */
+    color: black/* Светлый текст */;
     font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
     font-weight: bold;
+    width: 215px;
+    outline: none;
     font-style: normal;
 }
 
