@@ -40,9 +40,8 @@
     </div>
     <script>
         let tg = window.Telegram;
-        if (tg && tg.WebApp && tg.WebApp.initData) {
-            const initData = tg.WebApp.initData;
-            const userId = initData.user.id; // Получаем ID пользователя
+        if (tg && tg.WebApp && tg.WebApp.initDataUnsafe) {
+            const userId = tg.WebApp.initDataUnsafe.user.id; // Получаем ID пользователя
             document.getElementById('userIdDisplay').innerText = `Ваш ID: ${userId}`;
         } else {
             document.getElementById('userIdDisplay').innerText = "Не удалось получить ID пользователя.";
