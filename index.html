@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="main.js">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
@@ -17,11 +16,11 @@
         <div class="navbar-container">
             <a href="#" class="navbar-item">
                 <span class="navbar-text">Home</span>
-                <i id="icon" class="fas fa-home"></i>
+                <i class="fas fa-home"></i>
             </a>
             <a href="#" class="navbar-item">
                 <span class="navbar-text">Profile</span>
-                <i id="icon" class="fas fa-user"></i>
+                <i class="fas fa-user"></i>
             </a>
         </div>
     </nav>
@@ -39,17 +38,15 @@
         <a href="https://www.youtube.com/" target="_blank" class="social-link">YouTube: <i class="fab fa-youtube"></i></a>
         <a href="https://telegram.org/" target="_blank" class="social-link">Telegram: <i class="fab fa-telegram"></i></a>
     </div>
-    <script>let tg = window.Telegram;
-if (tg != undefined) {
-  if (tg.WebApp != undefined && tg.WebApp.initData != undefined) {
-    let safe = tg.WebApp.initData;
-    // Получение ID пользователя
-    let userId = safe.user.id;
-    // Отправка ID пользователя на сайт
-    // В этом примере мы будем использовать JavaScript для отправки данных
-    // на сервер, где они будут обработаны и отображены
-    document.getElementById('userIdDisplay').innerText = `Ваш ID: ${userId}`;
-  }
-}</script>
+    <script>
+        let tg = window.Telegram;
+        if (tg && tg.WebApp && tg.WebApp.initData) {
+            const initData = tg.WebApp.initData;
+            const userId = initData.user.id; // Получаем ID пользователя
+            document.getElementById('userIdDisplay').innerText = `Ваш ID: ${userId}`;
+        } else {
+            document.getElementById('userIdDisplay').innerText = "Не удалось получить ID пользователя.";
+        }
+    </script>
 </body>
 </html>
