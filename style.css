@@ -87,8 +87,8 @@ body {
 }
 
 #continue_learn button {
-    width: 150px;
-    height: 50px;
+    width: 180px;
+    height: 55px;
     border: 2px solid white;
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0);
@@ -118,6 +118,7 @@ h1 {
     margin: 0 10px;
     text-decoration: none;
     transition: 0.5s;
+    font-size: 16px;
 }
 
 .social-link:hover {
