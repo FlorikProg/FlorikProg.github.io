@@ -65,6 +65,16 @@
             console.error('Telegram WebApp не инициализирован или данные пользователя недоступны.');
         }
 
+        // Функция для отображения клавиатуры
+        function showKeyboard() {
+            tg.showVirtualKeyboard();
+        }
+
+        // Функция для скрытия клавиатуры
+        function hideKeyboard() {
+            tg.hideVirtualKeyboard();
+        }
+
         // Функция для получения списка слов из API
         async function fetchWords() {
             try {
@@ -105,6 +115,7 @@
                     checkTranslation(inputElement, word);
                     checkAllInputs(); // Проверяем состояние всех полей ввода
                 };
+                inputElement.onfocus = showKeyboard; // Показываем клавиатуру при фокусе на input
                 container.appendChild(inputElement);
             });
 
@@ -219,6 +230,13 @@
                 console.error('Ошибка при отправке данных:', error);
             }
         }
+
+        // Обработчик события для клика на страницу
+        document.body.addEventListener('click', function(event) {
+            if (!event.target.closest('input')) {
+                hideKeyboard();
+            }
+        });
     </script>
 </body>
 </html>
