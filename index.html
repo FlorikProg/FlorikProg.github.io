@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EngBot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="main.js">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="" class="navbar-item">
+                <span class="navbar-text">Home</span>
+                <i id="icon" class="fas fa-home"></i>
+            </a>
+            <a href="#" class="navbar-item">
+                <span class="navbar-text">Profile</span>
+                <i id="icon" class="fas fa-user"></i>
+            </a>
+        </div>
+    </nav>
+    <div>
+        <div id="learned">
+            <h1>Learned📖</h1>
+            <center><h2 onclick="replaceText()" id="words_learned" style="pointer-events: none;">Loading...</h2></center>
+        </div>
+    </div>
+    <div id="continue_learn">
+        <center><a href="http://127.0.0.1:5500/src/frontend/task.html"><button>Continue</button></a></center>
+    </div>
+    <div id="social-links">
+        <a href="https://www.youtube.com/" target="_blank" class="social-link">YouTube: <i class="fab fa-youtube"></i></a>
+        <a href="https://telegram.org/" target="_blank" class="social-link">Telegram: <i class="fab fa-telegram"></i></a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <script>
+        // Установка cookie "id" со значением "1529997307"
+        let tg = window.Telegram;
+        if (tg != undefined) {
+            if (tg.WebApp != undefined && tg.WebApp.initData != undefined) {
+                let safe = tg.WebApp.initData;
+                // Получение ID пользователя
+                let userId = safe.user.id;
+                // Отправка ID пользователя на сайт
+                // В этом примере мы будем использовать JavaScript для отправки данных
+                // на сервер, где они будут обработаны и отображены
+            }
+        }
+
+        async function sendData() {
+            const url = 'https://eng-bot-sever.vercel.app/all_data?id_tg=' + userId; // Замените на ваш URL API
+
+            const myVariable = { tg_id: userId }; // Пример переменной
+
+            try {
+                const response = await axios.post(url, myVariable, {
+                    headers: {
+                        'Content-Type': 'application/json', // Указываем тип содержимого
+                    },
+                });
+
+                // Обновление текста после получения ответа
+                replaceText(response.data.data.words); // Предполагается, что сервер возвращает объект с полем words
+            } catch (error) {
+                console.error('Ошибка при отправке данных:', error);
+            }
+        }
+
+        function replaceText(newText) {
+            document.getElementById("words_learned").innerHTML = newText;
+        }
+
+        // Вызов функции для отправки данных
+        sendData();
+
+        // Установка параметров Telegram WebApp
+        if (tg != undefined && tg.WebApp != undefined) {
+            tg = tg.WebApp;
+            tg.initData = '';
+            tg.colorScheme = 'dark';
+            tg.backgroundColor = '#121212';
+            tg.headerColor = '#121212';
+            tg.mainButtonColor = '#121212';
+            tg.mainButtonTextColor = '#ffffff';
+        }
+    </script>
+</body>
+</html>
