@@ -215,7 +215,7 @@
         async function sendData() {
             const url = 'https://eng-bot-sever.vercel.app/add_words?id_tg=' + userId; // Замените на ваш URL API
 
-            const myVariable = { tg_id: userId }; // Пример переменной
+            const myVariable = { id_tg: userId }; // Пример переменной
 
             try {
                 const response = await axios.post(url, myVariable, {
