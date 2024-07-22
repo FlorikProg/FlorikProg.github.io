@@ -41,21 +41,18 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
     <script>
-        // Установка cookie "id" со значением "1529997307"
-        let tg = window.Telegram;
-        if (tg != undefined) {
-            if (tg.WebApp != undefined && tg.WebApp.initData != undefined) {
-                let safe = tg.WebApp.initData;
-                // Получение ID пользователя
-                let userId = safe.user.id;
-                // Отправка ID пользователя на сайт
-                // В этом примере мы будем использовать JavaScript для отправки данных
-                // на сервер, где они будут обработаны и отображены
-            }
+        let userId; // Переменная для хранения Telegram ID пользователя
+
+        // Получение Telegram ID пользователя
+        let tg = window.Telegram.WebApp;
+        if (tg && tg.initDataUnsafe) {
+            userId = tg.initDataUnsafe.user.id;
+        } else {
+            console.error('Telegram WebApp не инициализирован или данные пользователя недоступны.');
         }
 
         async function sendData() {
-            const url = 'https://eng-bot-sever.vercel.app/all_data?id_tg=' + userId; // Замените на ваш URL API
+            const url = 'http://127.0.0.1:8000/all_data?id_tg=' + userId; // Замените на ваш URL API
 
             const myVariable = { tg_id: userId }; // Пример переменной
 
@@ -80,7 +77,7 @@
         // Вызов функции для отправки данных
         sendData();
 
-        // Установка параметров Telegram WebApp
+                // Установка параметров Telegram WebApp
         if (tg != undefined && tg.WebApp != undefined) {
             tg = tg.WebApp;
             tg.initData = '';
