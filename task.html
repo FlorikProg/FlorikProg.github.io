@@ -65,15 +65,6 @@
             console.error('Telegram WebApp не инициализирован или данные пользователя недоступны.');
         }
 
-        // Функция для отображения клавиатуры
-        function showKeyboard() {
-            tg.showVirtualKeyboard();
-        }
-
-        // Функция для скрытия клавиатуры
-        function hideKeyboard() {
-            tg.hideVirtualKeyboard();
-        }
 
         // Функция для получения списка слов из API
         async function fetchWords() {
@@ -232,10 +223,19 @@
         }
 
         // Обработчик события для клика на страницу
-        document.body.addEventListener('click', function(event) {
-            if (!event.target.closest('input')) {
-                hideKeyboard();
-            }
+        inputElement.onfocus = () => {
+            console.log('Input получил фокус');
+        };
+        
+        inputElement.onblur = () => {
+            console.log('Input потерял фокус');
+            hideKeyboard();
+        };
+        
+        function hideKeyboard() {
+            console.log('Скрываем виртуальную клавиатуру');
+            tg.hideVirtualKeyboard();
+        }
         });
     </script>
 </body>
