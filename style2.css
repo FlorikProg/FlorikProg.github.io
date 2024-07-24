@@ -1,10 +1,16 @@
+body {
+background-color: black;
+}
+
 .iphone-1415-pro-max-1 {
   font-family: "Nunito", sans-serif;
   font-weight: bold;
-  background: #FFFFFF;
+  color: #FFFFFF;
   padding: 20px;
   max-width: 600px;
   margin: 0 auto;
+  border-radius: 15px;
+  background-color: black;
 }
 
 .container-2 {
@@ -17,32 +23,43 @@
 .eng {
   font-family: 'Rubik Mono One', sans-serif;
   font-size: 40px;
-  color: #000000;
+  color: #FFFFFF;
   margin-bottom: 10px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .description {
-  font-size: 25px;
-  color: #000000;
+  font-size: 18px;
+  color: #FFFFFF;
   margin-bottom: 20px;
+  padding-top: 20px;
+  opacity: 0.8;
 }
 
 .start-button {
   font-size: 18px;
   color: #FFFFFF;
-  background-color: #000000;
+  background: linear-gradient(135deg, #d9d9d9, #858585);
+  border-radius: 5px;
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
   margin-bottom: 20px;
   cursor: pointer;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 200px;
+}
+
+.start-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .line-1, .line-2, .line-6 {
-  background: #000000;
+  background: rgba(255, 255, 255, 0.2);
   height: 1px;
   width: 100%;
   margin: 20px 0;
@@ -51,8 +68,9 @@
 .section-title {
   font-family: "Nunito", sans-serif;
   font-size: 34px;
-  color: #000000;
+  color: #FFFFFF;
   margin-bottom: 20px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .step {
@@ -62,7 +80,7 @@
 
 .step-number {
   font-size: 20px;
-  color: #000000;
+  color: #FFFFFF;
   margin-right: 10px;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
@@ -71,27 +89,31 @@
 
 .step-description {
   font-size: 20px;
-  color: #000000;
+  color: #FFFFFF;
+  opacity: 0.8;
 }
 
 .future-plans {
   font-size: 20px;
-  color: #000000;
+  color: #FFFFFF;
   margin-bottom: 10px;
+  opacity: 0.8;
 }
 
 .eyes {
   font-size: 40px;
-  color: #000000;
+  color: #FFFFFF;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .bot {
   font-family: 'Rubik Mono One', sans-serif;
   font-size: 40px;
-  color: #000000;
+  color: #FFFFFF;
   position: absolute;
   top: 20px;
   right: 20px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .lines {
@@ -100,11 +122,6 @@
   right: 20px;
 }
 
-.line-3, .line-5, .line-4 {
-  background: #000000;
-  height: 1px;
-  margin-bottom: 10px;
-}
 
 .line-3 {
   width: 50px;
@@ -116,4 +133,8 @@
 
 .line-4 {
   width: 30px;
+}
+
+img {
+  border-radius: 20px;
 }
