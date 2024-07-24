@@ -63,5 +63,17 @@
 
       </div>
     </div>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+          if (tg != undefined && tg.WebApp != undefined) {
+            tg = tg.WebApp;
+            tg.initData = '';
+            tg.colorScheme = 'light';
+            tg.backgroundColor = '#fff';
+            tg.headerColor = '#fff';
+            tg.mainButtonColor = '#fff';
+            tg.mainButtonTextColor = '#000000';
+        }
+    </script>
   </body>
 </html>
