@@ -13,61 +13,13 @@ body {
 
 }
 
-body {
-  background: #000; /* Черный фон */
-  background-color: black; /* Градиент от черного к темно-серому и обратно */
-  background-size: 400% 400%; /* Размер градиента */
-  animation: gradient 15s ease infinite; /* Анимация градиента */
-  position: relative; /* Для позиционирования псевдоэлемента */
-  overflow: hidden; /* Скрыть выступающие части псевдоэлемента */
-}
 
-body::before {
-  content: '';
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.271) 0%, rgba(255, 255, 255, 0) 70%); /* Радиальный градиент для свечения */
-  border-radius: 50%; /* Круглая форма */
-  animation: glow 3s linear infinite; /* Анимация свечения */
-}
-
-
-
-@keyframes gradient {
-  0% {
-      background-position: 0% 50%;
-  }
-  50% {
-      background-position: 100% 50%;
-  }
-  100% {
-      background-position: 0% 50%;
-  }
-}
-
-@keyframes glow {
-  0% {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 1;
-  }
-  50% {
-      transform: translate(-50%, -50%) scale(1.2);
-      opacity: 0.5;
-  }
-  100% {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 1;
-  }
-}
 
 h1 {
-  font-size: 45px;
-  padding-top: 30px;
+  font-size: 65px;
+  padding-top: 40px;
   font-weight: 350;
+  font-weight: 500;
 }
 
 #start {
@@ -90,3 +42,15 @@ button:hover {
   padding-top: 20px;
 }
 
+img {
+  margin-top: 30px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.315);
+  width: 180px;
+}
+
+p {
+  padding-top: 20px;
+  max-width: 300px;
+  font-size: 20px;
+}
