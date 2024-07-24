@@ -1,5 +1,5 @@
 .iphone-1415-pro-max-1 {
-  font-family: 'Rubik';
+  font-family: "Nunito", sans-serif;
   font-weight: bold;
   background: #FFFFFF;
   padding: 20px;
@@ -49,8 +49,8 @@
 }
 
 .section-title {
-  font-family: 'Rubik Mono One', sans-serif;
-  font-size: 24px;
+  font-family: "Nunito", sans-serif;
+  font-size: 34px;
   color: #000000;
   margin-bottom: 20px;
 }
