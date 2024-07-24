@@ -1,5 +1,8 @@
 body {
-  background-color: #000000;
+    background: 
+        url('decor.png')
+        #121212; /* Цвет фона */
+  background-size: 300%; /* Увеличиваем изображение на 150% */
   color: white;
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
