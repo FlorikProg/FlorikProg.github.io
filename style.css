@@ -56,10 +56,20 @@ body {
     align-items: center;
     text-align: center;
     padding-top: 35px;
+    font-size: 22px;
+}
+
+
+
+#text_progress {
+    align-items: center;
+    text-align: center;
+    padding-top: 35px;
+    font-size: 38px;
 }
 
 #words_learned {
-    border: 2px solid white; /* Рамка вокруг текста */
+
     padding: 1rem; /* Отступы внутри рамки */
     width: 150px;
     height: 40px;
@@ -83,7 +93,8 @@ body {
 
 
 #continue_learn {
-    padding-top: 50px;
+    padding-top: 0px;
+    
 }
 
 #continue_learn button {
@@ -125,3 +136,43 @@ h1 {
     text-shadow: rgba(255, 255, 255, 0.578) 1px 0 20px;
 }
 
+/* Общие стили для элемента progress */
+/* Общие стили для элемента progress */
+progress {
+    width: 210px; /* Уменьшаем ширину для центрирования */
+    height: 20px; /* Увеличиваем высоту для толщины */
+    border: none; /* Убираем стандартные границы */
+    border-radius: 10px; /* Скругляем углы */
+    overflow: hidden; /* Скрываем выступающие части */
+    margin: 0 auto; /* Центрируем по горизонтали */
+    display: block; /* Делаем элемент блочным для центрирования */
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.447);
+}
+
+/* Стили для фона прогресс бара */
+progress::-webkit-progress-bar {
+    background-color: #eee; /* Цвет фона */
+    border-radius: 10px; /* Скругляем углы */
+}
+
+/* Стили для заполненной части прогресс бара */
+progress::-webkit-progress-value {
+    background-color: #00d107; /* Зеленый цвет */
+    border-radius: 10px; /* Скругляем углы */
+
+}
+
+/* Стили для заполненной части прогресс бара в Firefox */
+progress::-moz-progress-bar {
+    background-color: #4CAF50; /* Зеленый цвет */
+    border-radius: 10px; /* Скругляем углы */
+
+}
+
+/* Контейнер для центрирования прогресс бара */
+#progress_bar {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Высота контейнера для центрирования */
+}
