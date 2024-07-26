@@ -77,6 +77,7 @@ body {
     font-family: "Nunito", sans-serif; /* Шрифт текста */
     font-size: 35px; /* Размер текста */
     color: white; /* Цвет текста */
+    margin-top: 5px;
     text-align: center; /* Выравнивание текста по центру */
     animation: flicker 3s infinite; /* Применяем анимацию мерцания */
 }
